@@ -33,7 +33,26 @@ class TestClass:
 
             return resultado
 
+    def test_print_atributo_str_da_classe(self):
+        nome, data_nascimento, salario = "Bruno", "13/01/2000", 100000
+        esperado =  f'Funcionario({nome}, {data_nascimento}, {salario})'
+        funcionario = Funcionario(nome, data_nascimento, salario)
+        esperado = funcionario.__str__()
 
+        assert esperado == esperado
+
+    def test_retorna_nome(self):
+        entrada = "Bruno"
+        funcionario = Funcionario("Bruno", "13/01/2000", 100000)
+        esperado = funcionario.nome
+
+        assert entrada == esperado
+
+    def test_caso_comum_de_bonus(self):
+        entrada = 900
+        funcionario = Funcionario("Bruno", "13/01/2000", 9000)
+        esperado = funcionario.calcular_bonus()
+        assert entrada == esperado
 
 
 
